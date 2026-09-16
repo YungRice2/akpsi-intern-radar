@@ -1,0 +1,274 @@
+# ─────────────────────────────────────────────────────────────
+#  AKPsi Intern Radar – configuration
+#  Edit this file; no code changes needed for most tweaks.
+# ─────────────────────────────────────────────────────────────
+
+# Which recruiting seasons to let through. Anything else is dropped.
+allowed_terms:
+  - "Summer 2027"
+  - "Spring 2027"
+  - "Fall 2026"
+  - "Winter 2027"
+  - "N/A"          # Simplify marks some roles with no term; keep them
+
+# Cycle filter applied to posting titles. A title with no year and no season
+# passes unconditionally — most postings omit them.
+cycles:
+  years_ahead: [1, 2]     # accepted = base_year + these offsets
+  rollover_month: 7       # base_year advances once month >= this; before it, base = year - 1
+  allowed_seasons: [summer]
+  # Override: set allowed_years: [2027, 2028] to pin specific years instead.
+
+# A posting passes the screener if its title matches ANY include keyword
+# and NO exclude keyword. Case-insensitive, matched as whole words/phrases.
+include_keywords:
+  - finance
+  - financial
+  - accounting
+  - accountant
+  - audit
+  - tax
+  - treasury
+  - "investment banking"
+  - "wealth management"
+  - "asset management"
+  - "private wealth"
+  - "financial advisor"
+  - "wealth advisor"
+  - "summer analyst"
+  - "sales and trading"
+  - "capital markets"
+  - "private equity"
+  - "corporate banking"
+  - "commercial banking"
+  - consulting
+  - consultant
+  - advisory
+  - strategy
+  - management
+  - "human resources"
+  - "\\bHR\\b"
+  - "people operations"
+  - talent
+  - recruiting
+  - sales
+  - "business development"
+  - marketing
+  - "brand"
+  - operations
+  - "risk"
+  - "compliance"
+  - "actuar"
+
+exclude_keywords:
+  - engineer
+  - engineering
+  - software
+  - developer
+  - "data scien"
+  - "machine learning"
+  - "\\bML\\b"
+  - "\\bAI\\b"
+  - quant
+  - "product manag"
+  - "product management"
+  - "\\bPhD\\b"
+  - "hardware"
+  - "cyber"
+  - "security engineer"
+  - "computer vision"
+  - "\\bMBA\\b"        # remove this line if you want MBA-level roles too
+  - "experienced"
+  - "senior"
+  - "technolog"
+  - "applied scien"
+  - "meteorolog"
+  - "data manag"
+  - "data govern"
+  - "data enablement"
+
+# Extra words that must appear somewhere in the title for a posting to count
+# as an internship (guards against full-time roles leaking in).
+internship_markers:
+  - intern
+  - internship
+  - "summer analyst"
+  - "co-op"
+  - "coop"
+  - "campus"
+  - "early careers"
+
+# ─────────────────────────────────────────────────────────────
+#  Company tiers  →  Tier 1 = "biggest companies", pinned to top
+# ─────────────────────────────────────────────────────────────
+# Matching is case-insensitive substring on the company name.
+tiers:
+  tier1:
+    - JP Morgan
+    - JPMorgan
+    - Goldman Sachs
+    - Morgan Stanley
+    - BNY
+    - Bank of New York
+    - Schwab
+    - Citi
+    - Bank of America
+    - Wells Fargo
+    - Deloitte
+    - PwC
+    - PricewaterhouseCoopers
+    - KPMG
+    - "EY"
+    - Ernst & Young
+    - McKinsey
+    - Bain
+    - Boston Consulting
+    - "BCG"
+    - BlackRock
+    - Fidelity
+    - Vanguard
+    - American Express
+    - Capital One
+    - Blackstone
+    - "KKR"
+    - Evercore
+    - Lazard
+    - Jefferies
+    - "UBS"
+    - Barclays
+    - Deutsche Bank
+    - Raymond James
+    - Northwestern Mutual
+    - Accenture
+  # Everything not in tier1 is tier2 automatically.
+
+# Optional: skip companies entirely (e.g. universities posting student jobs)
+blocked_companies:
+  - University of
+  - College of
+
+# ─────────────────────────────────────────────────────────────
+#  Recency
+# ─────────────────────────────────────────────────────────────
+recency:
+  # Drop anything older than this many days. Set to 0 to disable the filter.
+  # (Postings whose source doesn't publish a date are always kept.)
+  max_age_days: 45
+  # Within each tier, sort newest first. Turn off to sort alphabetically.
+  sort_newest_first: true
+  # Add a 🔥 and a louder header when a posting is under this many days old.
+  fresh_days: 3
+
+# Max postings to announce per company per scan. Overflow is NOT marked seen,
+# so it resurfaces on the next run. Set to 0 to disable.
+max_per_company_per_scan: 5
+
+# ─────────────────────────────────────────────────────────────
+#  Sources
+#  Every URL below was verified against a live job posting.
+# ─────────────────────────────────────────────────────────────
+sources:
+  # 1) Simplify community feed — the safety net. Covers thousands of employers,
+  #    including ones with locked-down career sites (Goldman, Deloitte, EY, KPMG).
+  simplify:
+    enabled: true
+    urls:
+      - https://raw.githubusercontent.com/SimplifyJobs/Summer2027-Internships/dev/.github/scripts/listings.json
+
+  # 2) Workday — the most common platform. Queried live, so you see postings
+  #    within 30 min of them going up.
+  workday:
+    enabled: true
+    search_text: intern
+    max_per_site: 200
+    sites:
+      - {name: Citi,                  careers_url: "https://citi.wd5.myworkdayjobs.com/2"}
+      - {name: Bank of America,       careers_url: "https://ghr.wd1.myworkdayjobs.com/us-emplsv"}
+      - {name: Wells Fargo,           careers_url: "https://wd1.myworkdaysite.com/recruiting/wf/WellsFargoJobs"}
+      - {name: BlackRock,             careers_url: "https://blackrock.wd1.myworkdayjobs.com/BlackRock_Professional"}
+      - {name: Blackstone,            careers_url: "https://blackstone.wd1.myworkdayjobs.com/Blackstone_Campus_Careers"}
+      - {name: Fidelity Investments,  careers_url: "https://fmr.wd1.myworkdayjobs.com/targeted"}
+      - {name: Vanguard,              careers_url: "https://vanguard.wd5.myworkdayjobs.com/vanguard_external"}
+      - {name: Capital One,           careers_url: "https://capitalone.wd12.myworkdayjobs.com/Capital_One"}
+      - {name: State Street,          careers_url: "https://statestreet.wd1.myworkdayjobs.com/Global"}
+      - {name: PNC,                   careers_url: "https://pnc.wd5.myworkdayjobs.com/External"}
+      - {name: Truist,                careers_url: "https://truist.wd1.myworkdayjobs.com/Careers"}
+      - {name: KeyBank,               careers_url: "https://keybank.wd5.myworkdayjobs.com/External_Career_Site"}
+      - {name: Regions Bank,          careers_url: "https://regions.wd5.myworkdayjobs.com/regions_careers"}
+      - {name: Fifth Third Bank,      careers_url: "https://fifththird.wd5.myworkdayjobs.com/53careers"}
+      - {name: Huntington Bank,       careers_url: "https://huntington.wd12.myworkdayjobs.com/HNBcareers"}
+      - {name: Synchrony,             careers_url: "https://synchronyfinancial.wd5.myworkdayjobs.com/University"}
+      - {name: Northwestern Mutual,   careers_url: "https://northwesternmutual.wd5.myworkdayjobs.com/corporate-careers"}
+      - {name: Prudential,            careers_url: "https://pru.wd5.myworkdayjobs.com/Careers"}
+      - {name: Raymond James,         careers_url: "https://raymondjames.wd1.myworkdayjobs.com/RaymondJamesEarlyCareers"}
+      - {name: Piper Sandler,         careers_url: "https://pipersandler.wd501.myworkdayjobs.com/Piper_Sandler_Careers"}
+      - {name: Baird,                 careers_url: "https://baird.wd1.myworkdayjobs.com/careers"}
+      - {name: Guggenheim,            careers_url: "https://guggenheiminvestment.wd5.myworkdayjobs.com/External"}
+      - {name: PwC,                   careers_url: "https://pwc.wd3.myworkdayjobs.com/US_Entry_Level_Careers"}
+      - {name: RSM,                   careers_url: "https://rsm.wd1.myworkdayjobs.com/RSMCareers"}
+      - {name: Crowe,                 careers_url: "https://crowe.wd12.myworkdayjobs.com/external_careers"}
+      - {name: Protiviti,             careers_url: "https://roberthalf.wd1.myworkdayjobs.com/protivitiexperiencedcareers"}
+      - {name: Accenture,             careers_url: "https://accenture.wd103.myworkdayjobs.com/AccentureCareers"}
+      - {name: Marsh McLennan,        careers_url: "https://mmc.wd1.myworkdayjobs.com/mmc"}
+      - {name: Mastercard,            careers_url: "https://mastercard.wd1.myworkdayjobs.com/CorporateCareers"}
+      - {name: S&P Global,            careers_url: "https://spgi.wd5.myworkdayjobs.com/SPGI_Careers"}
+      - {name: Nasdaq,                careers_url: "https://nasdaq.wd1.myworkdayjobs.com/Global_External_Site"}
+      - {name: CME Group,             careers_url: "https://cmegroup.wd1.myworkdayjobs.com/cme_careers"}
+      - {name: Barclays,              careers_url: "https://barclays.wd3.myworkdayjobs.com/External_Career_Site_Barclays"}
+      - {name: RBC,                   careers_url: "https://rbc.wd3.myworkdayjobs.com/rbcglobal1"}
+      - {name: TD Bank,               careers_url: "https://td.wd3.myworkdayjobs.com/TD_Bank_Careers"}
+      - {name: Fiserv,                careers_url: "https://fiserv.wd5.myworkdayjobs.com/ext"}
+      - {name: Nationwide,            careers_url: "https://nationwide.wd1.myworkdayjobs.com/Nationwide_Career"}
+      - {name: Travelers,             careers_url: "https://travelers.wd5.myworkdayjobs.com/External"}
+      - {name: Transamerica,          careers_url: "https://transamerica.wd5.myworkdayjobs.com/US"}
+      - {name: AllianceBernstein,     careers_url: "https://abglobal.wd1.myworkdayjobs.com/abcampuscareers"}
+
+  # 3) Oracle Recruiting Cloud. JPMorgan and BNY are here — NOT on Workday,
+  #    which is the single most common mistake when building one of these.
+  oracle:
+    enabled: true
+    search_text: intern
+    sites:
+      - {name: JP Morgan Chase, host: "https://jpmc.fa.oraclecloud.com",     site_number: CX_1001}
+      - {name: BNY,             host: "https://eofe.fa.us2.oraclecloud.com", site_number: CX_1001}
+      - {name: American Express, host: "https://egug.fa.us2.oraclecloud.com", site_number: CX_1}
+      - {name: Citizens Bank,   host: "https://hcgn.fa.us2.oraclecloud.com", site_number: CX_1}
+      - {name: Grant Thornton,  host: "https://ehzq.fa.us2.oraclecloud.com", site_number: CX_1}
+
+  # 4) Greenhouse boards — https://boards.greenhouse.io/<token>
+  greenhouse:
+    enabled: true
+    boards:
+      - {name: Marshall Wace, token: mwinternshipprogram}
+      - {name: Point72,       token: point72}
+      - {name: Jane Street,   token: janestreet}
+      - {name: Robinhood,     token: robinhood}
+
+  # 6) Lever boards — https://jobs.lever.co/<token>
+  lever:
+    enabled: true
+    boards: []
+
+# Covered only by the Simplify feed (career sites are login-walled or JS-only):
+#   Goldman Sachs (higher.gs.com) · Morgan Stanley · Deloitte · EY · KPMG
+#   McKinsey · Bain · BCG · Evercore · Lazard · Jefferies · UBS · Deutsche Bank
+
+# ─────────────────────────────────────────────────────────────
+#  Discord
+# ─────────────────────────────────────────────────────────────
+discord:
+  # Webhook URLs come from GitHub secrets (DISCORD_WEBHOOK, DISCORD_TOP_WEBHOOK)
+  # so they never live in this file.
+  username: "AKPsi Intern Radar"
+  # Mention for Tier-1 drops. Use "@here", "@everyone", or a role like <@&ROLE_ID>. Leave blank for none.
+  tier1_mention: "@here"
+  # Max new postings to announce on the very first run (avoids a 300-message flood).
+  first_run_max_posts: 25
+  # Weekly digest (sent by the `digest` job on Mondays) – Tier 1 listed first.
+  digest_lookback_days: 7
+  digest_max_per_tier: 40
+  # Put a dedicated "🔥 posted in the last N days" section at the top of the digest.
+  digest_fresh_section: true
+
+# Drop postings from `seen.json` after this many days so the file stays small.
+seen_retention_days: 200
