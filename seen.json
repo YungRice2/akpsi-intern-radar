@@ -2396,6 +2396,23 @@
 "url": "https://fa-etbx-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/nfcu/job/32396"
 }
 },
+"8711dfde3d7063e5": {
+"first_seen": 1789731360,
+"post": {
+"company": "Blackstone",
+"first_seen": 1789731360,
+"locations": [
+"Tokyo"
+],
+"posted_at": null,
+"posted_label": null,
+"source": "Workday",
+"terms": [],
+"tier": 1,
+"title": "2027 Blackstone Credit & Insurance Summer Analyst, Tokyo",
+"url": "https://blackstone.wd1.myworkdayjobs.com/Blackstone_Campus_Careers/job/Tokyo/XMLNAME-2027-Blackstone-Credit---Insurance-Summer-Analyst--Tokyo_40716"
+}
+},
 "88aeaf35827ce1c4": {
 "first_seen": 1789527488,
 "post": {
@@ -5319,6 +5336,23 @@
 "tier": 1,
 "title": "2027 Marketing Analyst Summer Internship Programme London",
 "url": "https://barclays.wd3.myworkdayjobs.com/External_Career_Site_Barclays/job/Canary-Wharf-1-Churchill-Place/XMLNAME-2027-Marketing-Analyst-Summer-Internship-Programme-London_JR-0000129579"
+}
+},
+"fc8b896fb9e44a2f": {
+"first_seen": 1789731360,
+"post": {
+"company": "Marsh McLennan",
+"first_seen": 1789731360,
+"locations": [
+"Kuala Lumpur - Corporate"
+],
+"posted_at": 1789731304,
+"posted_label": "Posted Today",
+"source": "Workday",
+"terms": [],
+"tier": 2,
+"title": "Intern - Business Development",
+"url": "https://mmc.wd1.myworkdayjobs.com/mmc/job/Kuala-Lumpur---Corporate/Intern---Business-Development_R_366432"
 }
 },
 "fd8b1cf3a9278e2b": {
