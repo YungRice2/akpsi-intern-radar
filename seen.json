@@ -1560,6 +1560,27 @@
 "url": "https://wd1.myworkdaysite.com/recruiting/wf/WellsFargoJobs/job/FRANKFURT-AM-MAIN-HE/Off-Cycle-Internship---Corporate-Banking---Financial-Institutions-Group_R-575449"
 }
 },
+"42acb143017db8ee": {
+"first_seen": 1790041476,
+"post": {
+"company": "Entergy",
+"first_seen": 1790041476,
+"locations": [
+"New Orleans, LA",
+"The Woodlands, TX",
+"Little Rock, AR"
+],
+"posted_at": 1790028499,
+"posted_label": null,
+"source": "Simplify",
+"terms": [
+"Spring 2027"
+],
+"tier": 2,
+"title": "Compliance and Systems Support Intern",
+"url": "https://jobs.entergy.com/job/Little-Rock-Student,-Intern-Compliance-and-Systems-Support-Spring-2027-Arka/1432001400/?ats=successfactors"
+}
+},
 "447826b894d10759": {
 "first_seen": 1789527488,
 "post": {
@@ -2133,6 +2154,23 @@
 "tier": 2,
 "title": "Finance and Compliance Intern",
 "url": "https://crowe.wd12.myworkdayjobs.com/external_careers/job/Chicago-IL-USA/Finance-and-Compliance-Intern_R-71054"
+}
+},
+"5c8ef05398fca429": {
+"first_seen": 1790041476,
+"post": {
+"company": "Crowe",
+"first_seen": 1790041476,
+"locations": [
+"2 Locations"
+],
+"posted_at": 1787449414,
+"posted_label": "Posted 30+ Days Ago",
+"source": "Workday",
+"terms": [],
+"tier": 2,
+"title": "Third Party Risk Intern",
+"url": "https://crowe.wd12.myworkdayjobs.com/external_careers/job/Chicago-IL-USA/Third-Party-Risk-Intern_R-71033"
 }
 },
 "5db145c15aa77ff3": {
