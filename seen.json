@@ -3929,6 +3929,23 @@
 "url": "https://firstcitizens.jibeapply.com/jobs/35826?icims=1"
 }
 },
+"56f36fa7518ab1f8": {
+"first_seen": 1792198644,
+"post": {
+"company": "Baird",
+"first_seen": 1792198644,
+"locations": [
+"WI-Milwaukee"
+],
+"posted_at": 1792198580,
+"posted_label": "Posted Today",
+"source": "Workday",
+"terms": [],
+"tier": 2,
+"title": "Internship - Financial Operations (Year-Round)",
+"url": "https://baird.wd1.myworkdayjobs.com/careers/job/WI-Milwaukee/Internship---Financial-Services-Operations--Year-Round-_R20261021-1"
+}
+},
 "573c459a5aaec794": {
 "first_seen": 1791329453,
 "post": {
@@ -7797,6 +7814,25 @@
 "tier": 2,
 "title": "Risk Analytics Co-op",
 "url": "https://cibc.wd3.myworkdayjobs.com/search/job/Toronto-ON/Risk-Analytics-Co-op-Winter-2027_2618885-1"
+}
+},
+"aea531c4379ffffa": {
+"first_seen": 1792198644,
+"post": {
+"company": "Pattern",
+"first_seen": 1792198644,
+"locations": [
+"Lehi, UT"
+],
+"posted_at": 1792190180,
+"posted_label": null,
+"source": "Simplify",
+"terms": [
+"N/A"
+],
+"tier": 2,
+"title": "Operations Intern",
+"url": "https://jobs.lever.co/pattern/13695e3e-92b7-40f7-8805-ea39b9c324e7/apply"
 }
 },
 "af0d4ebcee2267ef": {
