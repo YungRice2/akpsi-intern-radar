@@ -4560,6 +4560,25 @@
 "url": "https://egug.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/26013726"
 }
 },
+"5f3583b11e121d98": {
+"first_seen": 1792584606,
+"post": {
+"company": "Aon",
+"first_seen": 1792584606,
+"locations": [
+"London, UK"
+],
+"posted_at": 1791814654,
+"posted_label": null,
+"source": "Simplify",
+"terms": [
+"Summer 2027"
+],
+"tier": 2,
+"title": "Actuarial Consulting Intern - Pensions",
+"url": "https://jobs.aon.com/jobs/107787?icims=1"
+}
+},
 "5f4132b701cbbbb6": {
 "first_seen": 1789546207,
 "post": {
@@ -6552,6 +6571,21 @@
 "tier": 2,
 "title": "2027 ETP Intern - Finance Development Program, Birmingham, AL",
 "url": "https://regions.wd5.myworkdayjobs.com/regions_careers/job/Birmingham-AL---Regions-Center/XMLNAME-2027-ETP-Intern---Finance-Development-Program--Birmingham--AL_R104908"
+}
+},
+"9427947eaeb19b18": {
+"first_seen": 1792584606,
+"post": {
+"company": "Accenture",
+"first_seen": 1792584606,
+"locations": [],
+"posted_at": 1789992545,
+"posted_label": "Posted 30+ Days Ago",
+"source": "Workday",
+"terms": [],
+"tier": 1,
+"title": "Financial Services - Intern",
+"url": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Assago/Banking-and-Financial-Regulation-Intern_R00279783"
 }
 },
 "9525f75e873b32a7": {
