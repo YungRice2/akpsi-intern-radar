@@ -8698,6 +8698,23 @@
 "url": "https://egug.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/26014094"
 }
 },
+"8c9f51f69810d075": {
+"first_seen": 1795065323,
+"post": {
+"company": "Fidelity Investments",
+"first_seen": 1795065323,
+"locations": [
+"200 Seaport Blvd, Boston MA"
+],
+"posted_at": 1795065310,
+"posted_label": "Posted Today",
+"source": "Workday",
+"terms": [],
+"tier": 1,
+"title": "Intern, Risk",
+"url": "https://fmr.wd1.myworkdayjobs.com/targeted/job/200-Seaport-Blvd-Boston-MA/Intern--Risk_2135243"
+}
+},
 "8cb80e23463e9bc4": {
 "first_seen": 1789979208,
 "post": {
@@ -9085,6 +9102,25 @@
 "tier": 2,
 "title": "Global Investment Banking \u2013 M&A Internship (January - March ), Frankfurt",
 "url": "https://baird.wd1.myworkdayjobs.com/careers/job/GER-Frankfurt/Global-Investment-Banking---M-A-Internship--January---March----Frankfurt_R2026795"
+}
+},
+"93f2a87a6ba57b98": {
+"first_seen": 1795065323,
+"post": {
+"company": "Goldman Sachs",
+"first_seen": 1795065323,
+"locations": [
+"Albany, NY"
+],
+"posted_at": 1795044341,
+"posted_label": null,
+"source": "Simplify",
+"terms": [
+"Summer 2027"
+],
+"tier": 1,
+"title": "Summer Analyst Intern - Multiple Teams",
+"url": "https://higher.gs.com/roles/189373?type=students"
 }
 },
 "9427947eaeb19b18": {
